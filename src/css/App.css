@@ -35,8 +35,8 @@
   border: 1px solid #acb61d;
   margin: 1rem auto;
   border-radius: 10px;
-  -webkit-box-shadow: 2px 2px 5px black;
-          box-shadow: 2px 2px 5px black;
+  -webkit-box-shadow: 2px 2px 5px #0c7e6f;
+          box-shadow: 2px 2px 5px #0c7e6f;
   width: calc(500px + 2rem);
   display: -webkit-box;
   display: -ms-flexbox;
@@ -103,10 +103,69 @@
   color: white;
 }
 
+.note {
+  position: relative;
+  overflow-y: scroll;
+  display: -ms-grid;
+  display: grid;
+  margin: 1rem auto;
+  margin-bottom: 50px;
+  max-width: 1300px;
+  -ms-grid-columns: (minmax(330px, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+  place-items: center;
+  min-height: 200px;
+  grid-row-gap: 2rem;
+  grid-column-gap: 1.5rem;
+}
+
+.note .ind_note {
+  position: relative;
+  border: 1px solid #acb61d;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 300px;
+  max-height: 200px;
+  border-radius: 10px;
+  -webkit-box-shadow: 0 0 5px #78dce9;
+          box-shadow: 0 0 5px #78dce9;
+}
+
+.note .ind_note h1,
+.note .ind_note p {
+  margin: 0.5rem 0;
+}
+
+.note .ind_note button {
+  border: none;
+  position: absolute;
+  right: 0;
+  opacity: 0.7;
+  cursor: pointer;
+  padding: 5px 10px;
+  border-radius: 100px;
+}
+
+.note .ind_note button:hover {
+  -webkit-box-shadow: 0 0 3px #16beca;
+          box-shadow: 0 0 3px #16beca;
+  background: gray;
+  opacity: initial;
+  color: white;
+}
+
 .footer {
+  position: fixed;
+  bottom: 0;
   height: 40px;
-  -webkit-box-shadow: 0px 0px 8px #f04444;
-          box-shadow: 0px 0px 8px #f04444;
+  background: #fff;
+  -webkit-box-shadow: 0px 1px 5px #f04444;
+          box-shadow: 0px 1px 5px #f04444;
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -114,6 +173,7 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  z-index: 1;
   text-align: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
